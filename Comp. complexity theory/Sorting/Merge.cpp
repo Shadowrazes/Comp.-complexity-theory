@@ -3,53 +3,53 @@
 #include <algorithm>
 
 void Sorting::Merge::Sorting() {
-    int mid = m_numbers.size() / 2;
-
-    if (m_numbers.size() % 2 == 1)
-        mid++;
-
-    int h = 1; // шаг
-    int step;
-
-    while (h < m_numbers.size())
+    int sectionSize = 1;    // Размер сравниваемых подмассивов [1, 2, 4, 8 ... m_numbers.size()]
+    std::vector<int> temp;
+    while (sectionSize < m_numbers.size())
     {
-        step = h;
-
-        int i = 0;   // индекс первого пути
-        int j = mid; // индекс второго пути
-
-        while (step <= mid)
+        temp.clear();
+        int leftBorderIdx = 0;                                  // Левая граница подмассива
+        int middleIdx = leftBorderIdx + sectionSize;            // Середина подмассива
+        int rightBorderIdx = leftBorderIdx + sectionSize * 2;   // Правая граница подмассива
+        do
         {
-            while ((i < step) && (j < m_numbers.size()) && (j < (mid + step)))
-            { // пока не дошли до конца пути
-              // заполняем следующий элемент формируемой последовательности
-              // меньшим из двух просматриваемых
-                if (m_numbers[i] < m_numbers[j])
-                {
-                    m_tempChain.push_back(m_numbers[i]);
-                    i++;
-                }
-                else {
-                    m_tempChain.push_back(m_numbers[j]);
-                    j++;
-                }
+            // Сортируемый подмассив не должен выходить за границы последовательности
+            middleIdx = middleIdx < m_numbers.size() ? middleIdx : m_numbers.size();
+            rightBorderIdx = rightBorderIdx < m_numbers.size() ? rightBorderIdx : m_numbers.size();
+
+            // Индексы сравниваемых элементов
+            int leftCurrentNumIdx = leftBorderIdx,
+                rightCurrentNumIdx = middleIdx;
+
+            // Заполняем результирующий массив, пока левый элемент не дошёл до середины и правый не дошёл до конца
+            for (; leftCurrentNumIdx < middleIdx && rightCurrentNumIdx < rightBorderIdx; )
+            {
+                if (m_numbers[leftCurrentNumIdx] < m_numbers[rightCurrentNumIdx])
+                    temp.push_back(m_numbers[leftCurrentNumIdx++]);
+                else
+                    temp.push_back(m_numbers[rightCurrentNumIdx++]);
+                m_comparisons++;
+                m_assignments++;
             }
-            while (i < step)
-            { // переписываем оставшиеся элементы первого пути (если второй кончился раньше)
-                m_tempChain.push_back(m_numbers[i]);
-                i++;
+
+            // Заносим оставшиеся элементы сортируемых подмассивов в результирующий массив
+            while (leftCurrentNumIdx < middleIdx) {
+                temp.push_back(m_numbers[leftCurrentNumIdx++]);
+                m_assignments++;
             }
-            while ((j < (mid + step)) && (j < m_numbers.size()))
-            {  // переписываем оставшиеся элементы второго пути (если первый кончился раньше)
-                m_tempChain.push_back(m_numbers[j]);
-                j++;
+            while (rightCurrentNumIdx < rightBorderIdx) {
+                temp.push_back(m_numbers[rightCurrentNumIdx++]);
+                m_assignments++;
             }
-            step = step + h; // переходим к следующему этапу
-        }
-        h = h * 2;
-        
-        m_numbers.assign(m_tempChain.begin(), m_tempChain.end());
-        m_tempChain.clear();
+
+            // Перемещение на следующий сортируемый участок
+            leftBorderIdx += sectionSize * 2;
+            middleIdx += sectionSize * 2;
+            rightBorderIdx += sectionSize * 2;
+        } while (leftBorderIdx < m_numbers.size());
+
+        m_numbers = temp;
+        sectionSize *= 2; // Шаг разбиения х2
     }
 
     m_iterations = m_comparisons + m_assignments;

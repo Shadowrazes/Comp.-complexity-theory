@@ -6,9 +6,6 @@
 
 namespace Sorting {
 	class Merge : public Sort {
-	private:
-		std::vector<int> m_tempChain = {};		// Промежуточный массив
-
 	public:
 		Merge(const std::vector<int>& numbers) : Sort(numbers) {}
 

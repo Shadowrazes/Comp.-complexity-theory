@@ -5,7 +5,7 @@
 
 int main()
 {
-    std::vector<int> a{ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+    std::vector<int> a{ 10, 7, 9, 8, 5, 6, 7, 6, 5, 4, 3, 2, 1 };
     Sorting::Bubble bubble(a);
     bubble.Sorting();
     bubble.Output();
