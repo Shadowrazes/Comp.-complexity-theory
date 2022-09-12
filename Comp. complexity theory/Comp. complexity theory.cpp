@@ -49,11 +49,11 @@ int main()
                 break;
             }
             default:
-                throw std::invalid_argument("A numbers was expected, but a string was received");
+                throw std::invalid_argument("Unexpected input");
             }
         }
         catch (std::exception) {
-            std::cout << "Incorrect input, try again" << std::endl;
+            std::cout << "Incorrect choise, try again" << std::endl;
         }
     }
     
