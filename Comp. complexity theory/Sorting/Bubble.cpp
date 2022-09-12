@@ -7,9 +7,9 @@ void Sorting::Bubble::Sorting() {
         for (int j = 0; j < m_numbers.size() - 1; j++) {
             if (m_numbers[j] > m_numbers[j + 1]) {
                 std::swap(m_numbers[j], m_numbers[j + 1]);
-                m_comparisons++;
                 m_assignments += 3;
             }
+            m_comparisons++;
         }
     }
 

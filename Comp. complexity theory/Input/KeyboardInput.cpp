@@ -3,10 +3,13 @@
 std::vector<double> Input::KeyboardInput::Input() {
     while (true) {
         try {
+            // Чтение буфера потока ввода до конца, чтобы не было проблем с getline() (Очистка)
             std::cin.seekg(std::cin.eof());
+
             std::cout << "Input data with a space at the end: ";
             std::string input;
             std::getline(std::cin, input);
+
             for (const auto& it : input)
                 if (!std::isdigit(it) && it != '-' && it != ' ')
                     throw std::invalid_argument("A numbers was expected, but a string was received");
@@ -23,6 +26,7 @@ std::vector<double> Input::KeyboardInput::Input() {
 std::vector<double> Input::KeyboardInput::Parse() {
     std::string buff = "";
     std::vector<double> array;
+
     for (const auto& it : m_stroke) {
         if (it == ' ') {
             if (buff.size() != 0) {
@@ -34,5 +38,6 @@ std::vector<double> Input::KeyboardInput::Parse() {
         else
             buff += it;
     }
+
     return array;
 }

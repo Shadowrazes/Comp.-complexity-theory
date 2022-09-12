@@ -15,8 +15,10 @@ UInt StartWindow() {
     std::cout << "Choise: ";
 
     UInt choice = 0;
+
     std::cin >> choice;
     std::cout << std::endl;
+
     return choice;
 }
 
@@ -33,16 +35,19 @@ int main()
                 Sorting::Bubble bubble(window.Input());
                 bubble.Sorting();
                 bubble.Output();
+                break;
             }
             case 2: {
                 Sorting::Select select(window.Input());
                 select.Sorting();
                 select.Output();
+                break;
             }
             case 3: {
                 Sorting::Merge merge(window.Input());
                 merge.Sorting();
                 merge.Output();
+                break;
             }
             case 18: {
                 shutdown = true;
