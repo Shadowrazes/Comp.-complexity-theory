@@ -13,10 +13,10 @@ namespace Sorting {
 		int m_assignments = 0;	// Количество присваиваний
 		int m_iterations = 0;	// Общее количество итераций
 
-		std::vector<int> m_numbers = {};	// Массив для сортировки
+		std::vector<double> m_numbers = {};	// Массив для сортировки
 
 	public:
-		Sort(const std::vector<int>& numbers) : m_numbers(numbers) {}
+		Sort(const std::vector<double>& numbers) : m_numbers(numbers) {}
 		~Sort() = default;
 
 		// Метод сортировки

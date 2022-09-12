@@ -34,6 +34,9 @@
     <Filter Include="Исходные файлы\Stealer">
       <UniqueIdentifier>{5de0dabd-0fc9-4d64-b0bf-1a0f02463d38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Input">
+      <UniqueIdentifier>{3dccd638-1a04-459f-8752-95c5d9c1be6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Comp. complexity theory.cpp">
@@ -48,6 +51,12 @@
     <ClCompile Include="Sorting\Select.cpp">
       <Filter>Исходные файлы\Sorting</Filter>
     </ClCompile>
+    <ClCompile Include="Input\KeyboardInput.cpp">
+      <Filter>Исходные файлы\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\FileInput.cpp">
+      <Filter>Исходные файлы\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -61,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="Sorting\Select.h">
       <Filter>Исходные файлы\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\KeyboardInput.h">
+      <Filter>Исходные файлы\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\FileInput.h">
+      <Filter>Исходные файлы\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

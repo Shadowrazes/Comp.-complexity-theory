@@ -4,7 +4,7 @@
 
 void Sorting::Merge::Sorting() {
     int sectionSize = 1;    // Размер сравниваемых подмассивов [1, 2, 4, 8 ... m_numbers.size()]
-    std::vector<int> temp;
+    std::vector<double> temp;
     while (sectionSize < m_numbers.size())
     {
         temp.clear();
@@ -64,4 +64,6 @@ void Sorting::Merge::Output() const {
     std::cout << "Comparisons: " << m_comparisons << std::endl
         << "Assignments: " << m_assignments << std::endl
         << "Iterations: " << m_iterations << std::endl;
+
+    std::cout << std::endl << "-------------------------------------------" << std::endl;
 }

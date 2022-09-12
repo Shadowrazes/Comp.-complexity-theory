@@ -25,4 +25,6 @@ void Sorting::Bubble::Output() const {
     std::cout << "Comparisons: " << m_comparisons << std::endl
               << "Assignments: " << m_assignments << std::endl
               << "Iterations: "  << m_iterations  << std::endl;
+
+    std::cout << std::endl << "-------------------------------------------" << std::endl;
 }
