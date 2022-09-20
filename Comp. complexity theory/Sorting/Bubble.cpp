@@ -4,7 +4,7 @@
 
 void Sorting::Bubble::Sorting() {
     for (int i = 0; i < m_numbers.size(); i++) {
-        for (int j = 0; j < m_numbers.size() - 1; j++) {
+        for (int j = 0; j < m_numbers.size() - (i + 1); j++) {
             if (m_numbers[j] > m_numbers[j + 1]) {
                 std::swap(m_numbers[j], m_numbers[j + 1]);
                 m_assignments += 3;
