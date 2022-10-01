@@ -1,6 +1,8 @@
 #include "KeyboardInput.h"
 
-std::vector<double> Input::KeyboardInput::Input() {
+namespace Input
+{
+std::vector<double> KeyboardInput::Input() {
     while (true) {
         try {
             // Чтение буфера потока ввода до конца, чтобы не было проблем с getline() (Очистка)
@@ -22,8 +24,8 @@ std::vector<double> Input::KeyboardInput::Input() {
         }
     }
 }
-
-std::vector<double> Input::KeyboardInput::Parse() {
+//------------------------------------------------------------------------
+std::vector<double> KeyboardInput::Parse() {
     std::string buff = "";
     std::vector<double> array;
 
@@ -40,4 +42,6 @@ std::vector<double> Input::KeyboardInput::Parse() {
     }
 
     return array;
+}
+//------------------------------------------------------------------------
 }
