@@ -1,5 +1,5 @@
 ﻿//-------------------------------------------------------------------------------------------
-// Description: Класс реализующий ввод чисел с консоли
+// Description: Базовый класс для реализации ввода данных с консоли
 // Date: 12.09.2022
 // Authors: Хьюго М.А. & Наумов Н.В.
 // Ⓒ Sibsutis university
@@ -11,21 +11,20 @@
 #include <string>
 #include <iostream>
 
-namespace Input 
+namespace Input
 {
 class KeyboardInput 
 {
 protected:
 	std::string m_stroke = "";		// Строка, подаваемая на вход консоли
-
-	// Разбиение строки на числа и их конвертация
-	std::vector<double> Parse();
-
 public:
 	KeyboardInput() = default;
 	~KeyboardInput() = default;
 
+	static bool IsDigits(int paramAmount, ...);
+	static bool StringIsDigit(const std::string& str);
+
 	// Ввод строки и проверка его корректности
-	std::vector<double> Input();
+	virtual void Input() = 0;
 };
 }

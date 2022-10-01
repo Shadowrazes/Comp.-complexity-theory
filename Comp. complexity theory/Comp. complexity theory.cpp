@@ -2,13 +2,15 @@
 #include "Sorting/Bubble.h"
 #include "Sorting/Select.h"
 #include "Sorting/Merge.h"
-#include "Input/KeyboardInput.h"
+
+#include <complex>
+#include <iostream>
 
 typedef unsigned short int UInt;
 
 UInt StartWindow() 
 {
-    std::cout << "Choose an algorithm: " << std::endl;
+    std::cout << "\nChoose an algorithm: " << std::endl;
     std::cout << "1) Bubble Sort" << std::endl;
     std::cout << "2) Select Sort" << std::endl;
     std::cout << "3) Merge Sort" << std::endl;
@@ -27,8 +29,6 @@ int main()
 {
     bool shutdown = false;
 
-    Input::KeyboardInput window;
-
     while (!shutdown) 
     {
         try 
@@ -37,21 +37,24 @@ int main()
             {
                 case 1: 
                 {
-                    Sorting::Bubble bubble(window.Input());
+                    Sorting::Bubble bubble;
+                    bubble.Input();
                     bubble.Sorting();
                     bubble.Output();
                     break;
                 }
                 case 2: 
                 {
-                    Sorting::Select select(window.Input());
+                    Sorting::Select select;
+                    select.Input();
                     select.Sorting();
                     select.Output();
                     break;
                 }
                 case 3: 
                 {
-                    Sorting::Merge merge(window.Input());
+                    Sorting::Merge merge;
+                    merge.Input();
                     merge.Sorting();
                     merge.Output();
                     break;
