@@ -57,6 +57,12 @@
     <ClCompile Include="Input\FileInput.cpp">
       <Filter>Исходные файлы\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Sorting\Sort.cpp">
+      <Filter>Исходные файлы\Sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="Fourier\Fourier.cpp">
+      <Filter>Исходные файлы\Fourier</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="Input\FileInput.h">
       <Filter>Исходные файлы\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Fourier\Fourier.h">
+      <Filter>Исходные файлы\Fourier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
