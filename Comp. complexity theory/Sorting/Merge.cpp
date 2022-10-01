@@ -2,7 +2,8 @@
 
 #include <algorithm>
 
-void Sorting::Merge::Sorting() {
+namespace Sorting {
+void Merge::Sorting() {
     int sectionSize = 1;        // Размер сравниваемых подмассивов [1, 2, 4, 8 ... m_numbers.size()]
     std::vector<double> temp;
 
@@ -65,11 +66,13 @@ void Sorting::Merge::Sorting() {
     m_iterations = m_comparisons + m_assignments;
 }
 //---------------------------------------------------------------------------
-void Sorting::Merge::Output() const {
+void Merge::Output() const {
     std::cout << std::endl;
     std::cout << "Comparisons: " << m_comparisons << std::endl
         << "Assignments: " << m_assignments << std::endl
         << "Iterations: " << m_iterations << std::endl;
 
     std::cout << std::endl << "-------------------------------------------" << std::endl;
+}
+//---------------------------------------------------------------------------
 }

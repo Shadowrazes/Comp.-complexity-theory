@@ -2,7 +2,8 @@
 
 #include <algorithm>
 
-void Sorting::Select::Sorting() {
+namespace Sorting {
+void Select::Sorting() {
     int minInd;
     for (int i = 0; i < m_numbers.size() - 1; i++)
     {
@@ -26,7 +27,7 @@ void Sorting::Select::Sorting() {
     m_iterations = m_comparisons + m_assignments;
 }
 //---------------------------------------------------------------------------
-void Sorting::Select::Output() const {
+void Select::Output() const {
     for (const auto& num : m_numbers) {
         std::cout << num << " ";
     }
@@ -37,4 +38,6 @@ void Sorting::Select::Output() const {
         << "Iterations: " << m_iterations << std::endl;
 
     std::cout << std::endl << "-------------------------------------------" << std::endl;
+}
+//---------------------------------------------------------------------------
 }
