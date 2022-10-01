@@ -1,11 +1,16 @@
 #include "Bubble.h"
 #include <algorithm>
 
-namespace Sorting {
-void Bubble::Sorting() {
-    for (int i = 0; i < m_numbers.size(); i++) {
-        for (int j = 0; j < m_numbers.size() - (i + 1); j++) {
-            if (m_numbers[j] > m_numbers[j + 1]) {
+namespace Sorting 
+{
+void Bubble::Sorting() 
+{
+    for (int i = 0; i < m_numbers.size(); i++) 
+    {
+        for (int j = 0; j < m_numbers.size() - (i + 1); j++) 
+        {
+            if (m_numbers[j] > m_numbers[j + 1]) 
+            {
                 std::swap(m_numbers[j], m_numbers[j + 1]);
                 m_assignments += 3;
             }
@@ -16,8 +21,10 @@ void Bubble::Sorting() {
     m_iterations = m_comparisons + m_assignments;
 }
 //---------------------------------------------------------------------------
-void Bubble::Output() const {
-    for (const auto& num : m_numbers) {
+void Bubble::Output() const 
+{
+    for (const auto& num : m_numbers) 
+    {
         std::cout << num << " ";
     }
 

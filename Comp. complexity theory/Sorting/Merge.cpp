@@ -2,8 +2,10 @@
 
 #include <algorithm>
 
-namespace Sorting {
-void Merge::Sorting() {
+namespace Sorting 
+{
+void Merge::Sorting() 
+{
     int sectionSize = 1;        // Размер сравниваемых подмассивов [1, 2, 4, 8 ... m_numbers.size()]
     std::vector<double> temp;
 
@@ -37,12 +39,14 @@ void Merge::Sorting() {
             }
 
             // Заносим оставшиеся элементы сортируемых подмассивов в результирующий массив
-            while (leftCurrentNumIdx < middleIdx) {
+            while (leftCurrentNumIdx < middleIdx) 
+            {
                 temp.push_back(m_numbers[leftCurrentNumIdx++]);
                 m_assignments++;
             }
 
-            while (rightCurrentNumIdx < rightBorderIdx) {
+            while (rightCurrentNumIdx < rightBorderIdx) 
+            {
                 temp.push_back(m_numbers[rightCurrentNumIdx++]);
                 m_assignments++;
             }
@@ -57,7 +61,8 @@ void Merge::Sorting() {
         m_numbers = temp;
         sectionSize *= 2; // Шаг разбиения х2
 
-        for (const auto& num : m_numbers) {
+        for (const auto& num : m_numbers) 
+        {
             std::cout << num << " ";
         }
         std::cout << std::endl << std::endl;
@@ -66,7 +71,8 @@ void Merge::Sorting() {
     m_iterations = m_comparisons + m_assignments;
 }
 //---------------------------------------------------------------------------
-void Merge::Output() const {
+void Merge::Output() const 
+{
     std::cout << std::endl;
     std::cout << "Comparisons: " << m_comparisons << std::endl
         << "Assignments: " << m_assignments << std::endl

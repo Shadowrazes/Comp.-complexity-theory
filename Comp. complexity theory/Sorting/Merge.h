@@ -9,8 +9,10 @@
 
 #include "Sort.h"
 
-namespace Sorting {
-class Merge : public Sort {
+namespace Sorting 
+{
+class Merge : public Sort
+{
 public:
 	Merge(const std::vector<double>& numbers) : Sort(numbers) {}
 

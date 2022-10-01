@@ -10,8 +10,10 @@
 #include <iostream>
 #include <vector>
 
-namespace Sorting {
-class Sort {
+namespace Sorting 
+{
+class Sort 
+{
 
 protected:
 	int m_comparisons = 0;	// Количество сравнений

@@ -9,8 +9,10 @@
 
 #include "Sort.h"
 
-namespace Sorting {
-class Bubble : public Sort {
+namespace Sorting 
+{
+class Bubble : public Sort 
+{
 public:
 	Bubble(const std::vector<double>& numbers) : Sort(numbers) {}
 

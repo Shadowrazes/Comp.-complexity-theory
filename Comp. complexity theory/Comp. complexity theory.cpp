@@ -6,7 +6,8 @@
 
 typedef unsigned short int UInt;
 
-UInt StartWindow() {
+UInt StartWindow() 
+{
     std::cout << "Choose an algorithm: " << std::endl;
     std::cout << "1) Bubble Sort" << std::endl;
     std::cout << "2) Select Sort" << std::endl;
@@ -28,36 +29,44 @@ int main()
 
     Input::KeyboardInput window;
 
-    while (!shutdown) {
-        try {
-            switch (StartWindow()) {
-            case 1: {
-                Sorting::Bubble bubble(window.Input());
-                bubble.Sorting();
-                bubble.Output();
-                break;
-            }
-            case 2: {
-                Sorting::Select select(window.Input());
-                select.Sorting();
-                select.Output();
-                break;
-            }
-            case 3: {
-                Sorting::Merge merge(window.Input());
-                merge.Sorting();
-                merge.Output();
-                break;
-            }
-            case 18: {
-                shutdown = true;
-                break;
-            }
-            default:
-                throw std::invalid_argument("Unexpected input");
+    while (!shutdown) 
+    {
+        try 
+        {
+            switch (StartWindow()) 
+            {
+                case 1: 
+                {
+                    Sorting::Bubble bubble(window.Input());
+                    bubble.Sorting();
+                    bubble.Output();
+                    break;
+                }
+                case 2: 
+                {
+                    Sorting::Select select(window.Input());
+                    select.Sorting();
+                    select.Output();
+                    break;
+                }
+                case 3: 
+                {
+                    Sorting::Merge merge(window.Input());
+                    merge.Sorting();
+                    merge.Output();
+                    break;
+                }
+                case 18: 
+                {
+                    shutdown = true;
+                    break;
+                }
+                default:
+                    throw std::invalid_argument("Unexpected input");
             }
         }
-        catch (std::exception) {
+        catch (std::exception) 
+        {
             std::cout << "Incorrect choise, try again" << std::endl;
         }
     }
