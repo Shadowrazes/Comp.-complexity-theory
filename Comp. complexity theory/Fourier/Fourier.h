@@ -21,7 +21,11 @@ public:
 
 	void Input() override;
 	virtual void Output();
-private:
+	virtual void Output(const std::string& msg);
+
+	int GetListSize() { return m_complexList.size(); };
+
+protected:
 	TComplexList m_complexList;		// массив комплесных чисел
 };
 }

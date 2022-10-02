@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Comp. complexity theory.cpp" />
+    <ClCompile Include="Fourier\DiscreteFourier.cpp" />
     <ClCompile Include="Fourier\Fourier.cpp" />
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Sorting\Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Fourier\DiscreteFourier.h" />
     <ClInclude Include="Fourier\Fourier.h" />
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />

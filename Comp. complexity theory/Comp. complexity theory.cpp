@@ -2,18 +2,25 @@
 #include "Sorting/Bubble.h"
 #include "Sorting/Select.h"
 #include "Sorting/Merge.h"
-
+#include "Fourier/DiscreteFourier.h"
 #include <complex>
 #include <iostream>
+
+namespace
+{
+int C = 5;
+}
 
 typedef unsigned short int UInt;
 
 UInt StartWindow() 
 {
+    std::cout << "\n-----------------------------------------------------" << std::endl;
     std::cout << "\nChoose an algorithm: " << std::endl;
     std::cout << "1) Bubble Sort" << std::endl;
     std::cout << "2) Select Sort" << std::endl;
     std::cout << "3) Merge Sort" << std::endl;
+    std::cout << "4) Discrete Fourier transform" << std::endl;
     std::cout << "18) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
@@ -57,6 +64,16 @@ int main()
                     merge.Input();
                     merge.Sorting();
                     merge.Output();
+                    break;
+                }
+                case 4:
+                {
+                    Fourier::DiscreteFourier discrFurier;
+                    discrFurier.Input();
+                    discrFurier.Output("Initial array: ");
+                    discrFurier.DirectDFT();
+                    discrFurier.ReverseDFT();
+                    std::cout << "\nOperations: " << discrFurier.GetOperationCount() << std::endl;
                     break;
                 }
                 case 18: 

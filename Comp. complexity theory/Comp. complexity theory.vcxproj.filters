@@ -63,6 +63,9 @@
     <ClCompile Include="Fourier\Fourier.cpp">
       <Filter>Исходные файлы\Fourier</Filter>
     </ClCompile>
+    <ClCompile Include="Fourier\DiscreteFourier.cpp">
+      <Filter>Исходные файлы\Fourier</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -84,6 +87,9 @@
       <Filter>Исходные файлы\Input</Filter>
     </ClInclude>
     <ClInclude Include="Fourier\Fourier.h">
+      <Filter>Исходные файлы\Fourier</Filter>
+    </ClInclude>
+    <ClInclude Include="Fourier\DiscreteFourier.h">
       <Filter>Исходные файлы\Fourier</Filter>
     </ClInclude>
   </ItemGroup>

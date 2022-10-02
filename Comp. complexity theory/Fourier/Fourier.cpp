@@ -26,4 +26,13 @@ void Fourier::Output()
     std::cout << std::endl;
 }
 //------------------------------------------------------------
+void Fourier::Output(const std::string& msg)
+{
+    std::cout << "\n" << msg << std::endl;
+    for (const auto& num : m_complexList)
+        std::cout << num;
+
+    std::cout << std::endl;
+}
+//------------------------------------------------------------
 }
