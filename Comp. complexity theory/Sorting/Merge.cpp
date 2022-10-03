@@ -6,7 +6,7 @@ namespace Sorting
 {
 void Merge::Sorting() 
 {
-    int sectionSize = 1;        // Размер сравниваемых подмассивов [1, 2, 4, 8 ... m_numbers.size()]
+    int sectionSize = 1;        // Размер сравниваемых подмассивов [1, 2, 4, ... m_numbers.size()]
     std::vector<double> temp;
 
     while (sectionSize < m_numbers.size())
