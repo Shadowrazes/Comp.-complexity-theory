@@ -1,8 +1,5 @@
+#define _USE_MATH_DEFINES
 #include "DiscreteFourier.h"
-#include <cmath>
-#include <complex>
-
-const double pi = 3.141592653589793;
 
 namespace Fourier
 {
@@ -18,8 +15,8 @@ void DiscreteFourier::DirectDFT()
         tempImag = 0;
         for (int j = 0; j < m_complexList.size(); j++)
         { // j = k
-            double expDegree = (2 * pi * j * i) / m_complexList.size(); // 2*pi*k*j/N
-            // ( validArray + i * imaginaryArray ) * ( cos ( 2*pi*k*j/N ) - i * sin( 2*pi*k*j/N ) )
+            double expDegree = (2 * M_PI * j * i) / m_complexList.size(); // 2*M_PI*k*j/N
+            // ( validArray + i * imaginaryArray ) * ( cos ( 2*M_PI*k*j/N ) - i * sin( 2*M_PI*k*j/N ) )
             tempReal += m_complexList[j].real() * cos(expDegree) - m_complexList[j].imag() * sin(expDegree);
             tempImag += - m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
         }
@@ -44,8 +41,8 @@ void DiscreteFourier::ReverseDFT()
         tempImag = 0;
         for (int j = 0; j < m_complexList.size(); j++)
         { // j = k
-            double expDegree = (2 * pi * j * i) / m_complexList.size(); // 2*pi*k*j/N
-            // ( validArray + i * imaginaryArray ) * ( cos ( 2*pi*k*j/N ) + i * sin( 2*pi*k*j/N ) )
+            double expDegree = (2 * M_PI * j * i) / m_complexList.size(); // 2*M_PI*k*j/N
+            // ( validArray + i * imaginaryArray ) * ( cos ( 2*M_PI*k*j/N ) + i * sin( 2*M_PI*k*j/N ) )
             tempReal += m_complexList[j].real() * cos(expDegree) + m_complexList[j].imag() * sin(expDegree);
             tempImag += m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
         }

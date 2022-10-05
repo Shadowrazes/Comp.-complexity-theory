@@ -1,15 +1,11 @@
 ﻿#include <iostream>
+#include <iostream>
 #include "Sorting/Bubble.h"
 #include "Sorting/Select.h"
 #include "Sorting/Merge.h"
 #include "Fourier/DiscreteFourier.h"
-#include <complex>
-#include <iostream>
-
-namespace
-{
-int C = 5;
-}
+#include "Fourier/SemiFastFourier.h"
+#include "Folding/SimpleFolding.h"
 
 typedef unsigned short int UInt;
 
@@ -21,6 +17,8 @@ UInt StartWindow()
     std::cout << "2) Select Sort" << std::endl;
     std::cout << "3) Merge Sort" << std::endl;
     std::cout << "4) Discrete Fourier transform" << std::endl;
+    std::cout << "5) Semi-fast Fourier transform" << std::endl;
+    std::cout << "6) Simple folding" << std::endl;
     std::cout << "18) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
@@ -35,7 +33,6 @@ UInt StartWindow()
 int main()
 {
     bool shutdown = false;
-
     while (!shutdown) 
     {
         try 
@@ -74,6 +71,25 @@ int main()
                     discrFurier.DirectDFT();
                     discrFurier.ReverseDFT();
                     std::cout << "\nOperations: " << discrFurier.GetOperationCount() << std::endl;
+                    break;
+                }
+                case 5:
+                {
+                    Fourier::SemiFastFourier semiFastFurier;
+                    semiFastFurier.Input();
+                    semiFastFurier.Output("Initial array: ");
+                    semiFastFurier.DirectSFFT();
+                    semiFastFurier.ReverseSFFT();
+                    std::cout << "\nOperations: " << semiFastFurier.GetOperationCount() << std::endl;
+                    break;
+                }
+                case 6:
+                {
+                    Folding::SimpleFolding simpleFolding;
+                    simpleFolding.Input();
+                    simpleFolding.Fold();
+                    simpleFolding.Output("Initial arrays: ");
+                    std::cout << "\nOperations: " << simpleFolding.GetOperationCount() << std::endl;
                     break;
                 }
                 case 18: 

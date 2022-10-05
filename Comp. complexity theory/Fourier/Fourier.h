@@ -1,4 +1,5 @@
 ﻿//-------------------------------------------------------------------------------------------
+// Fourier.h
 // Description: Базовый класс для реализации преобразований Фурье
 // Date: 01.10.2022
 // Authors: Хьюго М.А. & Наумов Н.В.
@@ -8,6 +9,7 @@
 #pragma once
 #include <vector>
 #include <complex>
+#include <cmath>
 #include "../Input/KeyboardInput.h"
 
 namespace Fourier
@@ -20,8 +22,8 @@ public:
 	virtual ~Fourier() = default;
 
 	void Input() override;
-	virtual void Output();
-	virtual void Output(const std::string& msg);
+	virtual void Output() const;
+	virtual void Output(const std::string& msg) const;
 
 	int GetListSize() { return m_complexList.size(); };
 

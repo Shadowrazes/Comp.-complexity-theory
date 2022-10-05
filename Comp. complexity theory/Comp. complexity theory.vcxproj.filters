@@ -66,6 +66,15 @@
     <ClCompile Include="Fourier\DiscreteFourier.cpp">
       <Filter>Исходные файлы\Fourier</Filter>
     </ClCompile>
+    <ClCompile Include="Fourier\SemiFastFourier.cpp">
+      <Filter>Исходные файлы\Fourier</Filter>
+    </ClCompile>
+    <ClCompile Include="Folding\Folding.cpp">
+      <Filter>Исходные файлы\Folding</Filter>
+    </ClCompile>
+    <ClCompile Include="Folding\SimpleFolding.cpp">
+      <Filter>Исходные файлы\Folding</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -91,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="Fourier\DiscreteFourier.h">
       <Filter>Исходные файлы\Fourier</Filter>
+    </ClInclude>
+    <ClInclude Include="Fourier\SemiFastFourier.h">
+      <Filter>Исходные файлы\Fourier</Filter>
+    </ClInclude>
+    <ClInclude Include="Folding\Folding.h">
+      <Filter>Исходные файлы\Folding</Filter>
+    </ClInclude>
+    <ClInclude Include="Folding\SimpleFolding.h">
+      <Filter>Исходные файлы\Folding</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
