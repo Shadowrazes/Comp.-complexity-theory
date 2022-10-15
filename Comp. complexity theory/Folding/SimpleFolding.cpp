@@ -9,6 +9,7 @@ void SimpleFolding::Fold() {
         for (int j = 0; j < m_secondComplexList.size(); j++)
         {
             m_result[i + j] += m_firstComplexList[i] * m_secondComplexList[j];
+            m_operationCount += 2;
         }
     }
 }

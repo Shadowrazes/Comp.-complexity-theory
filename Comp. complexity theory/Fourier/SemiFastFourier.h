@@ -24,11 +24,11 @@ public:
 	void	ReverseSFFT();
 
 			// Трудоемкость, или кол-во операций
-	int		GetOperationCount() const { return m_complexity; };
+	int		GetOperationCount() const { return m_complexity /*m_complexList.size() * (m_p1 + m_p2)*/; };
 
 private:
 	int m_p1 = 0;
 	int m_p2 = 0;
-	int m_complexity = 0;	// Трудоемкость
+	int m_complexity = 0;
 };
 }

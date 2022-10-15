@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include "DiscreteFourier.h"
+#include <algorithm>
 
 namespace Fourier
 {
@@ -16,7 +17,6 @@ void DiscreteFourier::DirectDFT()
         for (int j = 0; j < m_complexList.size(); j++)
         { // j = k
             double expDegree = (2 * M_PI * j * i) / m_complexList.size(); // 2*M_PI*k*j/N
-            // ( validArray + i * imaginaryArray ) * ( cos ( 2*M_PI*k*j/N ) - i * sin( 2*M_PI*k*j/N ) )
             tempReal += m_complexList[j].real() * cos(expDegree) - m_complexList[j].imag() * sin(expDegree);
             tempImag += - m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
         }
@@ -41,14 +41,21 @@ void DiscreteFourier::ReverseDFT()
         tempImag = 0;
         for (int j = 0; j < m_complexList.size(); j++)
         { // j = k
-            double expDegree = (2 * M_PI * j * i) / m_complexList.size(); // 2*M_PI*k*j/N
-            // ( validArray + i * imaginaryArray ) * ( cos ( 2*M_PI*k*j/N ) + i * sin( 2*M_PI*k*j/N ) )
+            double expDegree = (2 * M_PI * j * i) / m_complexList.size();
             tempReal += m_complexList[j].real() * cos(expDegree) + m_complexList[j].imag() * sin(expDegree);
             tempImag += m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
         }
-        std::cout << "x[" << i << "] " << tempReal << " + " << tempImag << "i" << std::endl;
-        tempComplexList.emplace_back(tempReal, tempImag);
+        std::complex<double> result(tempReal, tempImag);
+        tempComplexList.push_back(result);
     }
+    tempComplexList.push_back(tempComplexList[0]);
+    std::reverse(tempComplexList.begin(), tempComplexList.end());
+    tempComplexList.pop_back();
+
+    for (int i = 0; i < tempComplexList.size(); i++) {
+        std::cout << "x[" << i << "] " << tempComplexList[i].real() << " + " << tempComplexList[i].imag() << "i" << std::endl;
+    }
+
     m_complexList = tempComplexList;
 }
 //-----------------------------------------------------------------

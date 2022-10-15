@@ -22,7 +22,7 @@ public:
 			//	//
 
 			// Трудоемкость, или кол-во операций
-	int		GetOperationCount() const { return 0; };
+	int		GetOperationCount() const { return m_operationCount; };
 
 private:
 	int		m_operationCount = 0;	// Трудоемкость
