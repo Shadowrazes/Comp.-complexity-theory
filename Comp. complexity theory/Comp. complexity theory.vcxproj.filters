@@ -81,6 +81,9 @@
     <ClCompile Include="Folding\SemiFastFourierFolding.cpp">
       <Filter>Исходные файлы\Folding</Filter>
     </ClCompile>
+    <ClCompile Include="Multiplication\Multiplication.cpp">
+      <Filter>Исходные файлы\Multiplication</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -121,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="Folding\SemiFastFourierFolding.h">
       <Filter>Исходные файлы\Folding</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiplication\Multiplication.h">
+      <Filter>Исходные файлы\Multiplication</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
