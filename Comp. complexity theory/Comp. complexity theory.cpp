@@ -8,6 +8,7 @@
 #include "Folding/SimpleFolding.h"
 #include "Folding/DiscreteFourierFolding.h"
 #include "Folding/SemiFastFourierFolding.h"
+#include "Multiplication/SimpleMultipl.h"
 
 typedef unsigned short int UInt;
 
@@ -23,6 +24,7 @@ UInt StartWindow()
     std::cout << "6) Simple folding" << std::endl;
     std::cout << "7) Discrete Fourier folding" << std::endl;
     std::cout << "8) Semi-fast Fourier folding" << std::endl;
+    std::cout << "9) Multiplication" << std::endl;
     std::cout << "18) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
@@ -112,6 +114,14 @@ int main()
                     semiFastFourierFolding.Fold();
                     semiFastFourierFolding.Output();
                     std::cout << "\nOperations: " << semiFastFourierFolding.GetOperationCount() << std::endl;
+                    break;
+                }
+                case 9:
+                {
+                    Multiplication::SimpleMultipl multipl;
+                    multipl.Input();
+                    multipl.Process();
+                    multipl.Output();
                     break;
                 }
                 case 18: 

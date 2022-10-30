@@ -138,6 +138,7 @@
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
     <ClCompile Include="Multiplication\Multiplication.cpp" />
+    <ClCompile Include="Multiplication\SimpleMultipl.cpp" />
     <ClCompile Include="Sorting\Bubble.cpp" />
     <ClCompile Include="Sorting\Merge.cpp" />
     <ClCompile Include="Sorting\Select.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />
     <ClInclude Include="Multiplication\Multiplication.h" />
+    <ClInclude Include="Multiplication\SimpleMultipl.h" />
     <ClInclude Include="Sorting\Bubble.h" />
     <ClInclude Include="Sorting\Merge.h" />
     <ClInclude Include="Sorting\Select.h" />

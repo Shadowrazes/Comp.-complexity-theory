@@ -38,6 +38,11 @@ void Multiplication::Output()
         std::cout << el;
 
     std::cout << std::endl;
+    std::cout << "Result: ";
+    for (const auto& el : m_result)
+        std::cout << el;
+
+    std::cout << std::endl;
 }
 //----------------------------------------------------------------
 }

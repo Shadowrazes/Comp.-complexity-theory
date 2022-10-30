@@ -84,6 +84,9 @@
     <ClCompile Include="Multiplication\Multiplication.cpp">
       <Filter>Исходные файлы\Multiplication</Filter>
     </ClCompile>
+    <ClCompile Include="Multiplication\SimpleMultipl.cpp">
+      <Filter>Исходные файлы\Multiplication</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -126,6 +129,9 @@
       <Filter>Исходные файлы\Folding</Filter>
     </ClInclude>
     <ClInclude Include="Multiplication\Multiplication.h">
+      <Filter>Исходные файлы\Multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiplication\SimpleMultipl.h">
       <Filter>Исходные файлы\Multiplication</Filter>
     </ClInclude>
   </ItemGroup>

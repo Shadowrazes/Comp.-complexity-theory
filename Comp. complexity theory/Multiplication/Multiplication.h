@@ -22,9 +22,11 @@ public:
 	void	Input() override;
 	// //
 	virtual void Output();
+	virtual void Process() = 0;
 
 protected:
 	std::vector<int> m_firstNumber;
 	std::vector<int> m_secondNumber;
+	std::vector<int> m_result;
 };
 }
