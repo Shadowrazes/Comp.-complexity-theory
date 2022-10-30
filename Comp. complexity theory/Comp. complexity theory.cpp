@@ -6,6 +6,8 @@
 #include "Fourier/DiscreteFourier.h"
 #include "Fourier/SemiFastFourier.h"
 #include "Folding/SimpleFolding.h"
+#include "Folding/DiscreteFourierFolding.h"
+#include "Folding/SemiFastFourierFolding.h"
 
 typedef unsigned short int UInt;
 
@@ -19,6 +21,8 @@ UInt StartWindow()
     std::cout << "4) Discrete Fourier transform" << std::endl;
     std::cout << "5) Semi-fast Fourier transform" << std::endl;
     std::cout << "6) Simple folding" << std::endl;
+    std::cout << "7) Discrete Fourier folding" << std::endl;
+    std::cout << "8) Semi-fast Fourier folding" << std::endl;
     std::cout << "18) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
@@ -90,6 +94,24 @@ int main()
                     simpleFolding.Fold();
                     simpleFolding.Output("Initial arrays: ");
                     std::cout << "\nOperations: " << simpleFolding.GetOperationCount() << std::endl;
+                    break;
+                }
+                case 7: 
+                {
+                    Folding::DiscreteFourierFolding discrFurierFolding;
+                    discrFurierFolding.Input();
+                    discrFurierFolding.Fold();
+                    discrFurierFolding.Output();
+                    std::cout << "\nOperations: " << discrFurierFolding.GetOperationCount() << std::endl;
+                    break;
+                }
+                case 8:
+                {
+                    Folding::SemiFastFourierFolding semiFastFourierFolding;
+                    semiFastFourierFolding.Input();
+                    semiFastFourierFolding.Fold();
+                    semiFastFourierFolding.Output();
+                    std::cout << "\nOperations: " << semiFastFourierFolding.GetOperationCount() << std::endl;
                     break;
                 }
                 case 18: 

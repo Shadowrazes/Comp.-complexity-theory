@@ -22,8 +22,10 @@ public:
 	virtual ~Fourier() = default;
 
 	void Input() override;
+	virtual void SetArray(TComplexList& complexList) { m_complexList = complexList; };
 	virtual void Output() const;
 	virtual void Output(const std::string& msg) const;
+	virtual TComplexList GetArray() const { return m_complexList; }
 
 	int GetListSize() { return m_complexList.size(); };
 

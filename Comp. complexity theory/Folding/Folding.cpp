@@ -6,12 +6,12 @@ namespace Folding
 void Folding::Input()
 {
     std::cout << "Input first array: ";
-    std::string a;
-    while (std::cin >> a)
+    std::string a, b;
+    while (std::cin >> a >> b)
     {
-        if (KeyboardInput::IsDigits(1, a))
+        if (KeyboardInput::IsDigits(2, a, b))
         {
-            std::complex<double> c(std::stod(a), 0);
+            std::complex<double> c(std::stod(a), std::stod(b));
             m_firstComplexList.push_back(c);
         }
             
@@ -19,11 +19,11 @@ void Folding::Input()
     }
 
     std::cout << "Input second array: ";
-    while (std::cin >> a)
+    while (std::cin >> a >> b)
     {
-        if (KeyboardInput::IsDigits(1, a))
+        if (KeyboardInput::IsDigits(2, a, b))
         {
-            std::complex<double> c(std::stod(a), 0);
+            std::complex<double> c(std::stod(a), std::stod(b));
             m_secondComplexList.push_back(c);
         }
 

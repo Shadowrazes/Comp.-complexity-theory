@@ -15,7 +15,7 @@ void SemiFastFourier::Input()
 //-----------------------------------------------------------------
 void SemiFastFourier::DirectSFFT()
 {
-    std::cout << "\nDirect SFFT\n";
+    //std::cout << "\nDirect SFFT\n";
    
     std::vector<std::complex<double>> arrayA1(m_complexList.size());
     std::vector<std::complex<double>> arrayA2(m_complexList.size());
@@ -67,7 +67,7 @@ void SemiFastFourier::DirectSFFT()
             std::complex<double> result(tempReal, tempImag);
             arrayA2[ind] = result / static_cast<double>(m_p2);
             
-            std::cout << "x[" << ind << "] " << arrayA2[ind].real() << " + " << arrayA2[ind].imag() << "i" << std::endl;
+            //std::cout << "x[" << ind << "] " << arrayA2[ind].real() << " + " << arrayA2[ind].imag() << "i" << std::endl;
         }
     }
 
@@ -76,7 +76,7 @@ void SemiFastFourier::DirectSFFT()
 //-----------------------------------------------------------------
 void SemiFastFourier::ReverseSFFT()
 {
-    std::cout << "\nReverse SFFT\n";
+    //std::cout << "\nReverse SFFT\n";
     
     std::vector<std::complex<double>> arrayA1(m_complexList.size());
     std::vector<std::complex<double>> arrayA2(m_complexList.size());
@@ -124,7 +124,7 @@ void SemiFastFourier::ReverseSFFT()
 
             arrayA2[ind] = std::complex<double>(tempReal, tempImag);
 
-            std::cout << "x[" << ind << "] " << arrayA2[ind].real() << " + " << arrayA2[ind].imag() << "i" << std::endl;
+            //std::cout << "x[" << ind << "] " << arrayA2[ind].real() << " + " << arrayA2[ind].imag() << "i" << std::endl;
         }
     }
 

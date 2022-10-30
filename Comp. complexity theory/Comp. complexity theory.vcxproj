@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Comp. complexity theory.cpp" />
+    <ClCompile Include="Folding\DiscreteFourierFolding.cpp" />
     <ClCompile Include="Folding\Folding.cpp" />
+    <ClCompile Include="Folding\SemiFastFourierFolding.cpp" />
     <ClCompile Include="Folding\SimpleFolding.cpp" />
     <ClCompile Include="Fourier\DiscreteFourier.cpp" />
     <ClCompile Include="Fourier\Fourier.cpp" />
@@ -141,7 +143,9 @@
     <ClCompile Include="Sorting\Sort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Folding\DiscreteFourierFolding.h" />
     <ClInclude Include="Folding\Folding.h" />
+    <ClInclude Include="Folding\SemiFastFourierFolding.h" />
     <ClInclude Include="Folding\SimpleFolding.h" />
     <ClInclude Include="Fourier\DiscreteFourier.h" />
     <ClInclude Include="Fourier\Fourier.h" />

@@ -1,7 +1,7 @@
 ﻿//-------------------------------------------------------------------------------------------
-// SimpleFolding.h
-// Description: Класс, реализующий простую свертку
-// Date: 05.10.2022
+// DiscreteFourierFolding.h
+// Description: Класс, реализующий свертку с использованием дискретного преобразования фурье
+// Date: 30.10.2022
 // Authors: Хьюго М.А. & Наумов Н.В.
 // Ⓒ Sibsutis university
 //-------------------------------------------------------------------------------------------
@@ -9,11 +9,11 @@
 #pragma once
 
 #include "Folding.h"
+#include "../Fourier/DiscreteFourier.h"
 
-namespace Folding
+namespace Folding 
 {
-class SimpleFolding : public Folding
-{
+class DiscreteFourierFolding : public Folding {
 public:
 			// Folding implemetation
 	void	Fold() override;

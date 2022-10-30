@@ -14,6 +14,7 @@ namespace Fourier
 {
 class DiscreteFourier : public Fourier
 {
+	typedef std::vector<std::complex<double>> TComplexList;
 public:
 			// прямое дискретное преобразование Фурье
 	void	DirectDFT();

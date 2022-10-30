@@ -29,11 +29,15 @@ public:
 	virtual void	Output() const;
 	virtual void	Output(const std::string& msg) const;
 
-	int GetListSize() { return m_firstComplexList.size(); };
+	int		GetListSize() { return m_firstComplexList.size(); };
+
+			// Трудоемкость, или кол-во операций
+	int		GetOperationCount() const { return m_operationCount; };
 
 protected:
 	TComplexList m_firstComplexList;	// Массив комплесных чисел
 	TComplexList m_secondComplexList;
 	TComplexList m_result;				// Результат свертки
+	int			 m_operationCount = 0;	// Трудоемкость
 };
 }
