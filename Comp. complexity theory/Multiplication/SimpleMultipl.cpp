@@ -23,14 +23,17 @@ void SimpleMultipl::Process()
 				else
 				{
 					m_result[idx] += res;
-					if (m_result[idx] > 10)
+					if (m_result[idx] >= 10)
 					{
-						if(idx == 0)
-							m_result.insert(m_result.begin(), m_result[idx] / 10);
+						if (idx == 0) {
+							m_result.insert(m_result.begin(), m_result[idx] / 10 + inMind);
+							idx++;
+						}
 						else 
-							m_result[idx - 1] += m_result[idx] / 10;
+							m_result[idx - 1] += m_result[idx] / 10 + inMind;
 
-						m_result[idx+1] = m_result[idx+1] % 10;
+						m_result[idx] = m_result[idx] % 10;
+						inMind = 0;
 					}
 						
 				}
