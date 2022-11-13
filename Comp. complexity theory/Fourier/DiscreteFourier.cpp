@@ -19,6 +19,7 @@ void DiscreteFourier::DirectDFT()
             double expDegree = (2 * M_PI * j * i) / m_complexList.size(); // 2*M_PI*k*j/N
             tempReal += m_complexList[j].real() * cos(expDegree) - m_complexList[j].imag() * sin(expDegree);
             tempImag += - m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
+            m_complexity += 5;
         }
         tempImag /= m_complexList.size();
         tempReal /= m_complexList.size();
@@ -43,6 +44,7 @@ void DiscreteFourier::ReverseDFT()
             double expDegree = (2 * M_PI * j * i) / m_complexList.size();
             tempReal += m_complexList[j].real() * cos(expDegree) + m_complexList[j].imag() * sin(expDegree);
             tempImag += m_complexList[j].real() * sin(expDegree) + m_complexList[j].imag() * cos(expDegree);
+            m_complexity += 5;
         }
         std::complex<double> result(tempReal, tempImag);
         tempComplexList.push_back(result);

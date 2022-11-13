@@ -29,7 +29,15 @@ public:
 
 	int GetListSize() { return m_complexList.size(); };
 
+			// трудоемкость, или кол-во операций
+	int		GetOperationCount() { return m_complexity; };
+
+	int		GetComplexity() { return m_complexity / 5; }
+
+	void	ResetComplexity() { m_complexity = 0; }
+
 protected:
 	TComplexList m_complexList;		// массив комплесных чисел
+	int			 m_complexity = 0;
 };
 }

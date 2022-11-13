@@ -23,8 +23,10 @@ public:
 	// //
 	virtual void Output();
 	virtual void Process() = 0;
+	virtual int  GetOperationCount() { return m_operationCount; }
 
 protected:
+	int				 m_operationCount = 0;
 	std::vector<int> m_firstNumber;
 	std::vector<int> m_secondNumber;
 	std::vector<int> m_result;

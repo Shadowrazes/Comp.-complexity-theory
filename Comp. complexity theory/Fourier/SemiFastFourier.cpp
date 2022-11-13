@@ -99,6 +99,7 @@ void SemiFastFourier::ReverseSFFT()
 
                 tempReal += neededElem.real() * cos(degree) - neededElem.imag() * sin(degree);
                 tempImag += neededElem.imag() * cos(degree) + neededElem.real() * sin(degree);
+                m_complexity += 5;
             }
 
             arrayA1[ind] = std::complex<double>(tempReal, tempImag);
@@ -120,6 +121,7 @@ void SemiFastFourier::ReverseSFFT()
 
                 tempReal += neededElem.real() * cos(degree) - neededElem.imag() * sin(degree);
                 tempImag += neededElem.imag() * cos(degree) + neededElem.real() * sin(degree);
+                m_complexity += 5;
             }
 
             arrayA2[ind] = std::complex<double>(tempReal, tempImag);

@@ -24,19 +24,14 @@ void DiscreteFourierFolding::Fold() {
 
     for (int i = 0; i < 2 * N; i++)
     {
-        double tempReal;
-        double tempImag;
-        tempReal = m_firstComplexList[i].real() * m_secondComplexList[i].real() - m_firstComplexList[i].imag() * m_secondComplexList[i].imag();
-        tempImag = m_firstComplexList[i].real() * m_secondComplexList[i].imag() + m_firstComplexList[i].imag() * m_secondComplexList[i].real();
-        tempReal *= 2 * N;
-        tempImag *= 2 * N;
-        m_result.emplace_back(tempReal, tempImag);
+        std::complex<double> tempRes = m_firstComplexList[i] * m_secondComplexList[i] * static_cast<double>(2 * N);
+        m_result.push_back(tempRes);
         m_operationCount += 2;
     }
 
     discrFurier.SetArray(m_result);
     discrFurier.ReverseDFT();
-    m_operationCount += discrFurier.GetOperationCount();
+    m_operationCount += discrFurier.GetComplexity();
     m_result = discrFurier.GetArray();
 }
 //-----------------------------------------------------------------

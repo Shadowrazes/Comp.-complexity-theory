@@ -42,6 +42,8 @@ void Multiplication::Output()
     for (const auto& el : m_result)
         std::cout << el;
 
+    std::cout << "\nOperations: " << GetOperationCount();
+
     std::cout << std::endl;
 }
 //----------------------------------------------------------------

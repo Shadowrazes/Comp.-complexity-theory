@@ -21,8 +21,5 @@ public:
 
 			// обратное дискретное преобразование Фурье
 	void	ReverseDFT();
-
-			// трудоемкость, или кол-во операций
-	int		GetOperationCount() { return 5 * std::pow(m_complexList.size(), 2); };
 };
 }

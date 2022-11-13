@@ -9,7 +9,11 @@ void SimpleMultipl::Process()
 	{
 		for (int firstNumIdx = m_firstNumber.size() - 1; firstNumIdx >= 0; firstNumIdx--)
 		{
+			if (m_firstNumber[firstNumIdx] == 0 || m_secondNumber[secondNumIdx] == 0)
+				m_operationCount--;
+
 			int res = m_firstNumber[firstNumIdx] * m_secondNumber[secondNumIdx] + inMind;
+			m_operationCount++;
 			inMind = res / 10;
 			res = res % 10;
 
@@ -25,12 +29,18 @@ void SimpleMultipl::Process()
 					m_result[idx] += res;
 					if (m_result[idx] >= 10)
 					{
-						if (idx == 0) {
+						if (idx == 0) 
+						{
 							m_result.insert(m_result.begin(), m_result[idx] / 10 + inMind);
 							idx++;
 						}
 						else 
+						{
 							m_result[idx - 1] += m_result[idx] / 10 + inMind;
+							if(secondNumIdx == 0)
+								m_operationCount++;
+						}
+							
 
 						m_result[idx] = m_result[idx] % 10;
 						inMind = 0;
