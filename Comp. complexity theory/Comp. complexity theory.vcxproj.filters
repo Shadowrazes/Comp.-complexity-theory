@@ -87,6 +87,9 @@
     <ClCompile Include="Multiplication\SimpleMultipl.cpp">
       <Filter>Исходные файлы\Multiplication</Filter>
     </ClCompile>
+    <ClCompile Include="Stealer\Stealer.cpp">
+      <Filter>Исходные файлы\Stealer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="Multiplication\SimpleMultipl.h">
       <Filter>Исходные файлы\Multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="Stealer\Stealer.h">
+      <Filter>Исходные файлы\Stealer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

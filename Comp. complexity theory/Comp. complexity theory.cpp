@@ -9,6 +9,7 @@
 #include "Folding/DiscreteFourierFolding.h"
 #include "Folding/SemiFastFourierFolding.h"
 #include "Multiplication/SimpleMultipl.h"
+#include "Stealer/Stealer.h"
 
 typedef unsigned short int UInt;
 
@@ -25,6 +26,7 @@ UInt StartWindow()
     std::cout << "7) Discrete Fourier folding" << std::endl;
     std::cout << "8) Semi-fast Fourier folding" << std::endl;
     std::cout << "9) Multiplication" << std::endl;
+    std::cout << "10) Stealer" << std::endl;
     std::cout << "18) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
@@ -122,6 +124,13 @@ int main()
                     multipl.Input();
                     multipl.Process();
                     multipl.Output();
+                    break;
+                }
+                case 10:
+                {
+                    DynamicProg::Stealer stealer;
+                    stealer.Input();
+                    stealer.Steal();
                     break;
                 }
                 case 18: 
