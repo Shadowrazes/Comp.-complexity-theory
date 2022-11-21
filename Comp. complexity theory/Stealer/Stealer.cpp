@@ -33,7 +33,8 @@ void Stealer::Input()
 }
 //-------------------------------------------------------------------------
 void Stealer::Steal() {
-    for (int i = 0; i < m_backpackCapacity; i++) 
+    m_maxCostList.reserve(m_backpackCapacity + 1);
+    for (int i = 0; i < m_backpackCapacity + 1; i++) 
     {
         if (i < m_minMass)
         {
@@ -44,11 +45,14 @@ void Stealer::Steal() {
         }
 
         m_maxCostList[i] = 0;
-        std::cout << "f(" << i << ") = max(";
-        for (int j = 0; j < m_products.size(); i++) 
+        std::cout << "f(" << i << ") = max( ";
+        for (int j = 0; j < m_products.size(); j++) 
         {
-            m_maxCostList[i] = std::max(m_maxCostList[i], m_maxCostList[i - m_products[j].mass] + m_products[j].price);
-            std::cout << "f(" << i << " - " << m_products[j].mass << ") + " << m_products[j].price << "; ";
+            if (i - m_products[j].mass >= 0)
+            {
+                m_maxCostList[i] = std::max(m_maxCostList[i], m_maxCostList[i - m_products[j].mass] + m_products[j].price);
+                std::cout << "f(" << i << " - " << m_products[j].mass << ") + " << m_products[j].price << "; ";
+            }
             m_complexity++;
         }
         std::cout << ") = " << m_maxCostList[i] << std::endl;
