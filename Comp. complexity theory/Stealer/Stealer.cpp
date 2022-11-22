@@ -55,7 +55,7 @@ void Stealer::Steal() {
             }
             m_complexity++;
         }
-        std::cout << ") = " << m_maxCostList[i] << std::endl;
+        std::cout << ") = " << m_maxCostList[i] << std::endl; 
         m_complexity++;
     }
 }
