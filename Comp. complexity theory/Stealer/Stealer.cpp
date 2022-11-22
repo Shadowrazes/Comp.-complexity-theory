@@ -13,7 +13,7 @@ void Stealer::Input()
     }
     m_backpackCapacity = std::stoi(str);
 
-    // Чтение буфера потока ввода до конца, чтобы не было проблем с getline() (Очистка)
+    // Р§С‚РµРЅРёРµ Р±СѓС„РµСЂР° РїРѕС‚РѕРєР° РІРІРѕРґР° РґРѕ РєРѕРЅС†Р°, С‡С‚РѕР±С‹ РЅРµ Р±С‹Р»Рѕ РїСЂРѕР±Р»РµРј СЃ getline() (РћС‡РёСЃС‚РєР°)
     std::cin.seekg(std::cin.eof());
     std::cout << "Enter a list of products separated by a space. The first number is the mass, the second is the price:\n ";
     std::string mass, price;
