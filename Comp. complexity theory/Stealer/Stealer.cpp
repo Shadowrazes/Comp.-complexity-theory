@@ -11,7 +11,9 @@ void Stealer::Input()
     {
         std::cout << "Incorrect input! Enter an integer - backpack capacity: ";
     }
+
     m_backpackCapacity = std::stoi(str);
+    m_funcList = TProductSetList(m_backpackCapacity + 1);
 
     // Чтение буфера потока ввода до конца, чтобы не было проблем с getline() (Очистка)
     std::cin.seekg(std::cin.eof());
@@ -23,50 +25,52 @@ void Stealer::Input()
         if (KeyboardInput::IsDigits(2, mass, price))
         {
             m_products.emplace_back(std::stoi(mass), std::stoi(price));
-            m_productsCount.push_back(0);
             if (std::stoi(mass) < m_minMass)
                 m_minMass = std::stoi(mass);
         }
 
-        if (std::cin.get() == '\n') return;
+        if (std::cin.get() == '\n') break;
     }
-   
+
+    for (auto& productSet : m_funcList) 
+    {
+        productSet.ProductsCount = IntList(m_products.size());
+    }
 }
 //-------------------------------------------------------------------------
 void Stealer::Steal() {
-    m_maxCostList = TMaxCostList(m_backpackCapacity + 1);
     for (int i = 1; i < m_backpackCapacity + 1; i++) 
     {
         if (i < m_minMass)
         {
-            m_maxCostList[i] = 0;
+            m_funcList[i].MaxCost = 0;
             std::cout << "f(" << i << ") = 0" << std::endl;
             m_complexity += m_products.size();
             continue;
         }
 
-        m_maxCostList[i] = 0;
+        m_funcList[i].MaxCost = 0;
         std::cout << "\nf(" << i << ") = max( ";
         for (int j = 0; j < m_products.size(); j++) 
         {
             if (i - m_products[j].mass >= 0)
             {
-                m_lastY = std::max(m_maxCostList[i], m_maxCostList[i - m_products[j].mass] + m_products[j].price);
-                if (m_maxCostList[i] != m_lastY) 
+                int max = std::max(m_funcList[i].MaxCost, m_funcList[i - m_products[j].mass].MaxCost + m_products[j].price);
+                if (max != m_funcList[i].MaxCost) 
                 {
-                    m_resultIdx = i - m_products[j].mass;
-                    m_maxCostList[i] = m_lastY;
-
-                }              
+                    m_funcList[i].MaxCost = max;
+                    m_lastProductIdx = j;
+                    m_lastFuncIdx = i - m_products[j].mass;
+                }
                 std::cout << "f(" << i << " - " << m_products[j].mass << ") + " << m_products[j].price << "; ";
             }
             m_complexity++;
         }
-        m_productsCount[m_resultIdx]++;
-        std::cout << ") = " << m_maxCostList[i] << std::endl;
-        for (int j = 0; j < m_productsCount.size(); j++) 
+        m_funcList[i].ProductsCount[m_lastProductIdx]++;
+        std::cout << ") = " << m_funcList[i].MaxCost << std::endl;
+        for (int j = 0; j < m_products.size(); j++) 
         {
-            std::cout << "count " << j + 1 << " item: " << m_productsCount[j] << std::endl;
+            std::cout << "Product index: " << j + 1 << ", count: " << m_funcList[i].ProductsCount[j] + m_funcList[m_lastFuncIdx].ProductsCount[j] << std::endl;
         }
 
     }

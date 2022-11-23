@@ -13,19 +13,7 @@ namespace DynamicProg {
 class Stealer : public Input::KeyboardInput
 {
 public:
-	struct Product;
-	typedef std::vector<Product> TProductList;
-	typedef std::vector<int> TMaxCostList;
-
-	Stealer() = default;
-	~Stealer() = default;
-
-	// KeyboardInput impl
-	void Input() override;
-	// //
-
-	void Steal();
-
+	typedef std::vector<int> IntList;
 	struct Product
 	{
 		Product(int a = 0, int b = 0)
@@ -37,16 +25,33 @@ public:
 		int price;
 	};
 
+	struct ProductSet
+	{
+		int		MaxCost = 0;		// максимальная стоимость всех товаров, которые можно унести
+		IntList ProductsCount;		// индекс - порядковый номер в продуктс, значение - количество товаров в рюкзаке
+	};
+	typedef std::vector<Product> TProductList;
+	typedef std::vector<ProductSet> TProductSetList;
+
+
+	Stealer() = default;
+	~Stealer() = default;
+
+	// KeyboardInput impl
+	void Input() override;
+	// //
+
+	void Steal();
+
 	int GetComplexitry() { return m_complexity; }
 	
 protected:
-	TProductList m_products;	// Все доступные товары для кражи
-	TMaxCostList m_productsCount; // индекс - порядковый номер в продуктс, значение - количество товаров в рюкзаке
-	TMaxCostList m_maxCostList; // Список функций, аргументом (индексом) каждой является вместимость рюкзака, а  значением - максимальная стоимость всех товаров, которые можно унести
+	TProductList		m_products;			// Все доступные товары для кражи
+	TProductSetList		m_funcList;		// Список функций, аргументом (индексом) каждой является вместимость рюкзака, а  значением - содержимое рюкзака (количество и стоимость)
 	int m_minMass = 0;
 	int m_backpackCapacity = 0;
 	int m_complexity = 0;
-	int m_lastY = 0;
-	int m_resultIdx = 0;
+	int m_lastProductIdx = 0;	// Индекс последнего продукта, который положили в рюкзак
+	int m_lastFuncIdx = 0;
 };
 }
