@@ -99,6 +99,9 @@
     <ClCompile Include="Graphs\Dijkstra.cpp">
       <Filter>Исходные файлы\Graphs</Filter>
     </ClCompile>
+    <ClCompile Include="Graphs\Kruskal.cpp">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -156,6 +159,9 @@
       <Filter>Исходные файлы\Graphs</Filter>
     </ClInclude>
     <ClInclude Include="Graphs\Dijkstra.h">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphs\Kruskal.h">
       <Filter>Исходные файлы\Graphs</Filter>
     </ClInclude>
   </ItemGroup>

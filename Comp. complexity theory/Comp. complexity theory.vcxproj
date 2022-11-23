@@ -139,6 +139,7 @@
     <ClCompile Include="Graphs\Dijkstra.cpp" />
     <ClCompile Include="Graphs\FordBellman.cpp" />
     <ClCompile Include="Graphs\Graph.cpp" />
+    <ClCompile Include="Graphs\Kruskal.cpp" />
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
     <ClCompile Include="Multiplication\Multiplication.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Graphs\Dijkstra.h" />
     <ClInclude Include="Graphs\FordBellman.h" />
     <ClInclude Include="Graphs\Graph.h" />
+    <ClInclude Include="Graphs\Kruskal.h" />
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />
     <ClInclude Include="Multiplication\Multiplication.h" />

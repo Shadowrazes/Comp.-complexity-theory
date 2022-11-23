@@ -12,6 +12,7 @@
 #include "Stealer/Stealer.h"
 #include "Graphs/FordBellman.h"
 #include "Graphs/Dijkstra.h"
+#include "Graphs/Kruskal.h"
 
 typedef unsigned short int UInt;
 
@@ -28,6 +29,7 @@ UInt StartWindow()
     std::cout << "7) Discrete Fourier folding" << std::endl;
     std::cout << "8) Semi-fast Fourier folding" << std::endl;
     std::cout << "9) Multiplication" << std::endl;
+    std::cout << "13) Kruskal" << std::endl;
     std::cout << "14) Ford-Bellman" << std::endl;
     std::cout << "15) Dijkstra" << std::endl;
     std::cout << "16) Stealer" << std::endl;
@@ -128,6 +130,14 @@ int main()
                     multipl.Input();
                     multipl.Process();
                     multipl.Output();
+                    break;
+                }
+                case 13:
+                {
+                    Graph::Kruskal kruskal;
+                    kruskal.Input();
+                    kruskal.Calculate();
+                    kruskal.Output();
                     break;
                 }
                 case 14:
