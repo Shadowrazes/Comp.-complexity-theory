@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,6 +136,9 @@
     <ClCompile Include="Fourier\DiscreteFourier.cpp" />
     <ClCompile Include="Fourier\Fourier.cpp" />
     <ClCompile Include="Fourier\SemiFastFourier.cpp" />
+    <ClCompile Include="Graphs\Dijkstra.cpp" />
+    <ClCompile Include="Graphs\FordBellman.cpp" />
+    <ClCompile Include="Graphs\Graph.cpp" />
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
     <ClCompile Include="Multiplication\Multiplication.cpp" />
@@ -153,6 +157,9 @@
     <ClInclude Include="Fourier\DiscreteFourier.h" />
     <ClInclude Include="Fourier\Fourier.h" />
     <ClInclude Include="Fourier\SemiFastFourier.h" />
+    <ClInclude Include="Graphs\Dijkstra.h" />
+    <ClInclude Include="Graphs\FordBellman.h" />
+    <ClInclude Include="Graphs\Graph.h" />
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />
     <ClInclude Include="Multiplication\Multiplication.h" />

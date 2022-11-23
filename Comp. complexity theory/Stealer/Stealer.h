@@ -36,12 +36,17 @@ public:
 		int mass;
 		int price;
 	};
+
+	int GetComplexitry() { return m_complexity; }
 	
 protected:
 	TProductList m_products;	// Все доступные товары для кражи
+	TMaxCostList m_productsCount; // индекс - порядковый номер в продуктс, значение - количество товаров в рюкзаке
 	TMaxCostList m_maxCostList; // Список функций, аргументом (индексом) каждой является вместимость рюкзака, а  значением - максимальная стоимость всех товаров, которые можно унести
 	int m_minMass = 0;
 	int m_backpackCapacity = 0;
 	int m_complexity = 0;
+	int m_lastY = 0;
+	int m_resultIdx = 0;
 };
 }

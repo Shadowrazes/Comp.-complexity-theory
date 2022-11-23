@@ -90,6 +90,15 @@
     <ClCompile Include="Stealer\Stealer.cpp">
       <Filter>Исходные файлы\Stealer</Filter>
     </ClCompile>
+    <ClCompile Include="Graphs\FordBellman.cpp">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\Graph.cpp">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\Dijkstra.cpp">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -139,6 +148,15 @@
     </ClInclude>
     <ClInclude Include="Stealer\Stealer.h">
       <Filter>Исходные файлы\Stealer</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphs\FordBellman.h">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphs\Graph.h">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphs\Dijkstra.h">
+      <Filter>Исходные файлы\Graphs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
