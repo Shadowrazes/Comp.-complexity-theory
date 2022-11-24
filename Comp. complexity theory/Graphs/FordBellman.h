@@ -23,7 +23,10 @@ public:
 
 protected:
 	int m_source = 0;
+	int m_countVertexEntry = 0;
+	bool m_cycled = false;
 	std::vector<int> m_parents;
 	void PrintPath(int vertex);
+	void PrintCyclePath(int vertex);
 };
 }

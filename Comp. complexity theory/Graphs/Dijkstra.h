@@ -23,6 +23,7 @@ public:
 
 protected:
 	int m_source = 0;
+	Edge* m_negativeWeightEdge = nullptr;
 	std::vector<int> m_parents;
 	std::vector<std::vector<Edge>> m_edgedGraph;
 	void PrintPath(int vertex);

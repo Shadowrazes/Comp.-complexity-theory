@@ -9,6 +9,7 @@
 #include "Folding/DiscreteFourierFolding.h"
 #include "Folding/SemiFastFourierFolding.h"
 #include "Multiplication/SimpleMultipl.h"
+#include "Multiplication/Karatsuba.h"
 #include "Stealer/Stealer.h"
 #include "Graphs/FordBellman.h"
 #include "Graphs/Dijkstra.h"
@@ -130,6 +131,14 @@ int main()
                     multipl.Input();
                     multipl.Process();
                     multipl.Output();
+                    break;
+                }
+                case 10:
+                {
+                    Multiplication::Karatsuba karatsuba;
+                    karatsuba.Input();
+                    karatsuba.Process();
+                    karatsuba.Output();
                     break;
                 }
                 case 13:

@@ -142,6 +142,7 @@
     <ClCompile Include="Graphs\Kruskal.cpp" />
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
+    <ClCompile Include="Multiplication\Karatsuba.cpp" />
     <ClCompile Include="Multiplication\Multiplication.cpp" />
     <ClCompile Include="Multiplication\SimpleMultipl.cpp" />
     <ClCompile Include="Sorting\Bubble.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Graphs\Kruskal.h" />
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />
+    <ClInclude Include="Multiplication\Karatsuba.h" />
     <ClInclude Include="Multiplication\Multiplication.h" />
     <ClInclude Include="Multiplication\SimpleMultipl.h" />
     <ClInclude Include="Sorting\Bubble.h" />
