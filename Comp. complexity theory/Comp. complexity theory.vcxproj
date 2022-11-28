@@ -140,6 +140,7 @@
     <ClCompile Include="Graphs\FordBellman.cpp" />
     <ClCompile Include="Graphs\Graph.cpp" />
     <ClCompile Include="Graphs\Kruskal.cpp" />
+    <ClCompile Include="Graphs\SalesmanHugo.cpp" />
     <ClCompile Include="Input\FileInput.cpp" />
     <ClCompile Include="Input\KeyboardInput.cpp" />
     <ClCompile Include="Multiplication\Karatsuba.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Graphs\FordBellman.h" />
     <ClInclude Include="Graphs\Graph.h" />
     <ClInclude Include="Graphs\Kruskal.h" />
+    <ClInclude Include="Graphs\SalesmanHugo.h" />
     <ClInclude Include="Input\FileInput.h" />
     <ClInclude Include="Input\KeyboardInput.h" />
     <ClInclude Include="Multiplication\Karatsuba.h" />

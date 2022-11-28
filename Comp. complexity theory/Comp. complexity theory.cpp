@@ -14,6 +14,7 @@
 #include "Graphs/FordBellman.h"
 #include "Graphs/Dijkstra.h"
 #include "Graphs/Kruskal.h"
+#include "Graphs/SalesmanHugo.h"
 
 typedef unsigned short int UInt;
 
@@ -30,11 +31,13 @@ UInt StartWindow()
     std::cout << "7) Discrete Fourier folding" << std::endl;
     std::cout << "8) Semi-fast Fourier folding" << std::endl;
     std::cout << "9) Multiplication" << std::endl;
+    std::cout << "10) Karatsuba" << std::endl;
     std::cout << "13) Kruskal" << std::endl;
     std::cout << "14) Ford-Bellman" << std::endl;
     std::cout << "15) Dijkstra" << std::endl;
     std::cout << "16) Stealer" << std::endl;
-    std::cout << "18) Exit" << std::endl << std::endl;
+    std::cout << "18) RGR" << std::endl << std::endl;
+    std::cout << "19) Exit" << std::endl << std::endl;
     std::cout << "Choise: ";
 
     UInt choice = 0;
@@ -173,7 +176,14 @@ int main()
                     std::cout << "\nComplexity: " << stealer.GetComplexitry() << "\n";
                     break;
                 }
-                case 18: 
+                case 18:
+                {
+                    Graph::Salesman salesman;
+                    salesman.Input();
+                    salesman.Calculate();
+                    break;
+                }
+                case 19: 
                 {
                     shutdown = true;
                     break;

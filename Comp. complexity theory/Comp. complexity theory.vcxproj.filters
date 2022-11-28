@@ -105,6 +105,9 @@
     <ClCompile Include="Multiplication\Karatsuba.cpp">
       <Filter>Исходные файлы\Multiplication</Filter>
     </ClCompile>
+    <ClCompile Include="Graphs\SalesmanHugo.cpp">
+      <Filter>Исходные файлы\Graphs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sorting\Sort.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="Multiplication\Karatsuba.h">
       <Filter>Исходные файлы\Multiplication</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphs\SalesmanHugo.h">
+      <Filter>Исходные файлы\Graphs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -28,10 +28,12 @@ public:
 	virtual void Output(){};
 	virtual void Input();
 	virtual int  FindVertexCount();
+	virtual void EdgesToMatrix();
 	virtual int  GetComplexity() { return m_complexity; }
 
 protected:
 	std::vector<Edge> m_graph;
+	std::vector< std::vector<int>> m_matrixGraph;
 	std::vector<int> m_result;
 	int m_vertexCount = 0;
 	int m_complexity = 0;
