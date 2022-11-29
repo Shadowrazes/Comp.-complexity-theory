@@ -14,7 +14,7 @@ namespace Graph
 class FordBellman : public Graph
 {
 public:
-	FordBellman(std::string fileName = "Graphs\\Graph.txt");
+	FordBellman(std::string fileName = "Graphs\\GraphDijkstra.txt");
 	~FordBellman() = default;
 
 	virtual void Calculate();

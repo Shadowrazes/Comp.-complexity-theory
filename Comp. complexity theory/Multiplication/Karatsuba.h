@@ -10,6 +10,7 @@
 #include "../Input/KeyboardInput.h"
 #include "Multiplication.h"
 #include <vector>
+#include <cmath>
 
 namespace Multiplication
 {
@@ -24,7 +25,9 @@ public:
 
 protected:
 	void Normalize(int& addedZeroes);
+	void Normalize() { m_operationCount = ceil(pow(m_numMaxSize, 1.56)); }
 	std::vector<int> SimpleMulti(const std::vector<int>& firstNum, const std::vector<int>& secondNum);
 	int m_digitCapacity;
+	int m_numMaxSize = 0;
 };
 }

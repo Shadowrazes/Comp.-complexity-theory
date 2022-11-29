@@ -14,7 +14,7 @@ namespace Graph
 class Dijkstra : public Graph
 {
 public:
-	Dijkstra(std::string fileName = "Graphs\\Graph.txt");
+	Dijkstra(std::string fileName = "Graphs\\GraphDijkstra.txt");
 	~Dijkstra() = default;
 
 	virtual void Calculate();

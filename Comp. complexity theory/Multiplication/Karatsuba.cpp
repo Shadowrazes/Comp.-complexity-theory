@@ -1,5 +1,6 @@
 #include "Karatsuba.h"
 #include <algorithm>
+#include <cmath>
 
 namespace Multiplication
 {
@@ -83,9 +84,10 @@ void Karatsuba::Normalize(int &addedZeroes) {
 
 void Karatsuba::Process() {
     int maxSize = m_firstNumber.size() > m_secondNumber.size() ? m_firstNumber.size() : m_secondNumber.size();
+    m_numMaxSize = maxSize;
     int addedZeroes = 0;
-    if (maxSize % 2 == 1)
-        maxSize++;
+    float degree = log2f(maxSize);
+    maxSize = pow(2, ceil(degree));
 
     for (int i = m_firstNumber.size(); i < maxSize; i++) {
         m_firstNumber.push_back(0);
@@ -101,8 +103,19 @@ void Karatsuba::Process() {
     std::reverse(m_secondNumber.begin(), m_secondNumber.end());
 
     m_result = Process(m_firstNumber, m_secondNumber);
-
+    if (maxSize != m_numMaxSize) Normalize();
     Normalize(addedZeroes);
+
+    /*int sum = 0;
+    for (int i = m_result.size() - 1, j = 0; i >= 0; i--, j++) {
+        sum += m_result[j] * pow(2, i);
+    }
+
+    m_result.clear();
+    while (sum > 0) {
+        m_result.insert(m_result.begin(), sum % 10);
+        sum /= 10;
+    }*/
 }
 }
 

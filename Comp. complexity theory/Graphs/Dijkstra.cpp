@@ -1,5 +1,6 @@
 #include "Dijkstra.h"
 #include <iomanip>
+#include <set>
 
 namespace Graph
 {
@@ -69,28 +70,20 @@ void Dijkstra::Calculate() {
 
 	m_parents = std::vector<int>(m_vertexCount, -1);
 	m_result = std::vector<int>(m_vertexCount, INT_MAX);
+	std::set<std::pair<int, int>> unused;
+	unused.insert(std::make_pair(0, m_source));
 	m_result[m_source] = 0;
 
-	std::vector<bool> used(m_vertexCount);
-	int minDist = 0;
-	int minVertex = m_source;
-	while (minDist < INT_MAX){
-		int i = minVertex;
-		used[i] = true;
+	while (!unused.empty()) {
+		int i = unused.begin()->second;
+		unused.erase(unused.begin());
 
-		for (auto& edge : m_edgedGraph[i]){
-			if (m_result[i] + edge.Weight < m_result[edge.Close]){
+		for (auto& edge : m_edgedGraph[i]) {
+			if (edge.Weight != INT_MAX && m_result[i] != INT_MAX && m_result[i] + edge.Weight < m_result[edge.Close]) {
+				unused.erase(std::make_pair(m_result[edge.Close], edge.Close));
 				m_result[edge.Close] = m_result[i] + edge.Weight;
 				m_parents[edge.Close] = i;
-			}
-		}
-
-		minDist = INT_MAX;
-
-		for (int j = 0; j < m_vertexCount; ++j) {
-			if (!used[j] && m_result[j] < minDist){
-				minDist = m_result[j];
-				minVertex = j;
+				unused.insert(std::make_pair(m_result[edge.Close], edge.Close));
 			}
 		}
 	}

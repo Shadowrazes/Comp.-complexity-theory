@@ -9,11 +9,13 @@ void Multiplication::Input()
 	std::cout << "Enter 2 numbers separated by a space: ";
     std::string str;
     std::vector<std::string> tempList;
+    std::vector<int> nums;
     while (std::cin >> str)
     {
         if (KeyboardInput::IsDigits(1, str))
         {
             tempList.push_back(str);
+            nums.push_back(std::stoi(str));
         }
 
         if (std::cin.get() == '\n' || tempList.size() >= 2) break;
@@ -24,6 +26,19 @@ void Multiplication::Input()
 
     for (const auto& el : tempList[1])
         m_secondNumber.push_back(el - '0');
+
+    /*while (nums[0] > 0) {
+        m_firstNumber.push_back(nums[0] % 2);
+        nums[0] /= 2;
+    }
+
+    while (nums[1] > 0) {
+        m_secondNumber.push_back(nums[1] % 2);
+        nums[1] /= 2;
+    }
+
+    std::reverse(m_firstNumber.begin(), m_firstNumber.end());
+    std::reverse(m_secondNumber.begin(), m_secondNumber.end());*/
 }
 //----------------------------------------------------------------
 void Multiplication::Output()

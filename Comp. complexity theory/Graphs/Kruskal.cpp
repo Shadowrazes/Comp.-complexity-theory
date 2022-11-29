@@ -16,7 +16,7 @@ void Kruskal::Input() {
 void Kruskal::Output() {
 	int weight = 0;
 	for (const auto& edge : m_spanningTree) {
-		std::cout << edge.Start << " " << edge.Close << std::endl;
+		std::cout << edge.Start << " " << edge.Close << " " << edge.Weight << std::endl;
 		weight += edge.Weight;
 	}
 	std::cout << "\nWeight: " << weight << std::endl;

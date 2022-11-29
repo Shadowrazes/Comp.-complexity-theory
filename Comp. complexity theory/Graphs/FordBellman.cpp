@@ -72,7 +72,7 @@ void FordBellman::Calculate() {
 
 	for (int i = 0; i < m_graph.size() + 1; ++i) {
 		for (auto& edge : m_graph){
-			if (m_result[edge.Start] != INT_MAX && m_result[edge.Start] + edge.Weight < m_result[edge.Close]) {
+			if (edge.Weight != INT_MAX && m_result[edge.Start] != INT_MAX && m_result[edge.Start] + edge.Weight < m_result[edge.Close]) {
 				m_result[edge.Close] = m_result[edge.Start] + edge.Weight;
 				m_parents[edge.Close] = edge.Start;
 
