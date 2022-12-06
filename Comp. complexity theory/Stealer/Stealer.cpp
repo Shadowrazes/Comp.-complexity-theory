@@ -66,13 +66,13 @@ void Stealer::Steal() {
             }
             m_complexity++;
         }
+        m_funcList[i].ProductsCount = m_funcList[m_lastFuncIdx].ProductsCount;
         m_funcList[i].ProductsCount[m_lastProductIdx]++;
         std::cout << ") = " << m_funcList[i].MaxCost << std::endl;
         for (int j = 0; j < m_products.size(); j++) 
         {
-            std::cout << "Product index: " << j + 1 << ", count: " << m_funcList[i].ProductsCount[j] + m_funcList[m_lastFuncIdx].ProductsCount[j] << std::endl;
+            std::cout << "Product index: " << j + 1 << ", count: " << m_funcList[i].ProductsCount[j] << std::endl;
         }
-
     }
 }
 //-------------------------------------------------------------------------
